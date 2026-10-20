@@ -1,0 +1,32 @@
+# 依赖
+node_modules/
+package-lock.json.bak
+
+# 系统 / 编辑器
+.DS_Store
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# 渲染产物与素材（体积大，不入库）
+*.mp4
+*.mov
+*.wav
+*.mp3
+*.png
+*.jpg
+*.jpeg
+
+# 本地凭据 —— 绝不要提交
+local-endpoint.json
+.env
+*.key
+*.pem
+
+# 临时
+*.tmp
+*.log
+render-report.json

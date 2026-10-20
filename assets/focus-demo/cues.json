@@ -1,0 +1,191 @@
+{
+  "sr": 44100,
+  "seed": 20261014,
+  "scenes": [
+    {
+      "name": "S03",
+      "dur": 12
+    },
+    {
+      "name": "S04",
+      "dur": 12
+    }
+  ],
+  "cues": [
+    {
+      "scene": "S03",
+      "at": 1.5,
+      "type": "whoosh",
+      "dur": 5.6,
+      "amp": 0.4,
+      "gain": 0.7,
+      "pan": 0.15,
+      "note": "持续破空"
+    },
+    {
+      "scene": "S03",
+      "at": 1.55,
+      "type": "volley",
+      "step": 0.4,
+      "count": 14,
+      "amp": 0.5,
+      "gain": 0.42,
+      "pan": "alt",
+      "note": "第一轮弓弩齐发"
+    },
+    {
+      "scene": "S03",
+      "at": 3.0,
+      "type": "thunk",
+      "step": 0.4,
+      "count": 14,
+      "amp": 0.5,
+      "gain": 0.62,
+      "gain_step": -0.012,
+      "pan": "alt",
+      "export": "ARROW1",
+      "note": "箭矢钉入船板 ×14（与画面落点同一数组）"
+    },
+    {
+      "scene": "S03",
+      "at": 4.4,
+      "type": "water",
+      "dur": 3.4,
+      "bright": 0.3,
+      "amp": 0.34,
+      "gain": 0.8,
+      "pan": -0.25,
+      "note": "受箭搅动水面"
+    },
+    {
+      "scene": "S03",
+      "at": 7.5,
+      "type": "rumble",
+      "dur": 3.4,
+      "amp": 0.36,
+      "gain": 1.0,
+      "pan": 0.0,
+      "note": "船体持续倾斜"
+    },
+    {
+      "scene": "S03",
+      "at": 10.2,
+      "type": "water",
+      "dur": 2.6,
+      "bright": 0.25,
+      "amp": 0.28,
+      "gain": 0.7,
+      "pan": 0.2,
+      "note": "船身压水"
+    },
+    {
+      "scene": "S04",
+      "at": 0.45,
+      "type": "creak",
+      "dur": 1.5,
+      "amp": 0.34,
+      "gain": 1.0,
+      "pan": -0.2,
+      "note": "掉转船头（木响）"
+    },
+    {
+      "scene": "S04",
+      "at": 0.95,
+      "type": "water",
+      "dur": 2.4,
+      "bright": 0.7,
+      "amp": 0.4,
+      "gain": 0.95,
+      "pan": 0.15,
+      "note": "掉头水声"
+    },
+    {
+      "scene": "S04",
+      "at": 1.55,
+      "type": "creak",
+      "dur": 1.0,
+      "amp": 0.22,
+      "gain": 0.7,
+      "pan": 0.25,
+      "note": "船身转到位"
+    },
+    {
+      "scene": "S04",
+      "at": 1.75,
+      "type": "volley",
+      "step": 0.33,
+      "count": 14,
+      "amp": 0.45,
+      "gain": 0.38,
+      "pan": "alt",
+      "note": "第二轮弓弩齐发"
+    },
+    {
+      "scene": "S04",
+      "at": 3.2,
+      "type": "thunk",
+      "step": 0.33,
+      "count": 14,
+      "amp": 0.5,
+      "gain": 0.6,
+      "gain_step": -0.014,
+      "pan": "alt",
+      "export": "ARROW2",
+      "note": "箭矢钉入船板 ×14（与画面落点同一数组）"
+    },
+    {
+      "scene": "S04",
+      "at": 1.75,
+      "type": "whoosh",
+      "dur": 4.6,
+      "amp": 0.36,
+      "gain": 0.62,
+      "pan": -0.15,
+      "note": "持续破空"
+    },
+    {
+      "scene": "S04",
+      "at": 4.6,
+      "type": "water",
+      "dur": 3.2,
+      "bright": 0.28,
+      "amp": 0.32,
+      "gain": 0.78,
+      "pan": 0.25,
+      "note": "双面受箭水花"
+    },
+    {
+      "scene": "S04",
+      "at": 7.55,
+      "type": "chime",
+      "f": 528,
+      "dur": 2.0,
+      "amp": 0.3,
+      "gain": 0.7,
+      "pan": -0.1,
+      "note": "回正"
+    },
+    {
+      "scene": "S04",
+      "at": 8.2,
+      "type": "chime",
+      "f": 792,
+      "dur": 2.2,
+      "amp": 0.26,
+      "gain": 0.62,
+      "pan": 0.1,
+      "note": "箭均船平"
+    },
+    {
+      "scene": "S04",
+      "at": 9.6,
+      "type": "water",
+      "dur": 2.4,
+      "bright": 0.2,
+      "amp": 0.24,
+      "gain": 0.6,
+      "pan": -0.3,
+      "note": "拍舷"
+    }
+  ]
+}

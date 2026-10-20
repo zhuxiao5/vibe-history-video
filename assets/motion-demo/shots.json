@@ -1,0 +1,331 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration": 24,
+  "visual_family": "dark-signal-demo",
+  "audio_status": "not-requested",
+  "hook_contract": null,
+  "readability_contract": {
+    "display_width": 390,
+    "critical_min_display_px": 14,
+    "hook_min_display_px": 16,
+    "measurement": null
+  },
+  "shots": [
+    {
+      "id": "S01",
+      "start": 0,
+      "end": 8,
+      "focus_object": "读清后的文字与持续火焰",
+      "text_beats": [
+        {
+          "id": "float",
+          "text": "字读清后，仍在轻轻起伏。",
+          "x": 105,
+          "y": 150,
+          "start": 0.3,
+          "end": 7.9,
+          "font_px": 80,
+          "color": "#f1e9d3",
+          "role": "narration",
+          "critical": true,
+          "entry": {
+            "type": "assemble",
+            "duration": 0.5,
+            "stagger": 0.028,
+            "blur": 7
+          },
+          "hold": {
+            "profile": "v02",
+            "time_origin": 0,
+            "phase": 0.4
+          },
+          "exit": {
+            "duration": 0.35,
+            "stagger": 0.015,
+            "blur": 9
+          },
+          "highlights": []
+        },
+        {
+          "id": "focus",
+          "text": "重点词，单独放大。",
+          "x": 105,
+          "y": 269,
+          "start": 1.5,
+          "end": 7.9,
+          "font_px": 80,
+          "color": "#f1e9d3",
+          "role": "narration",
+          "critical": true,
+          "entry": {
+            "type": "assemble",
+            "duration": 0.5,
+            "stagger": 0.028,
+            "blur": 7
+          },
+          "hold": {
+            "profile": "v02",
+            "time_origin": 0,
+            "phase": 0.4
+          },
+          "exit": {
+            "duration": 0.35,
+            "stagger": 0.015,
+            "blur": 9
+          },
+          "highlights": [
+            {
+              "text": "重点词",
+              "color": "#d9ad58",
+              "font_px": 98,
+              "weight": 700,
+              "entry": {
+                "scale_from": 1.45,
+                "blur": 12,
+                "duration": 0.65
+              },
+              "underline": {
+                "delay": 1.5,
+                "duration": 0.55,
+                "width": 2,
+                "offset": 14
+              }
+            }
+          ]
+        }
+      ],
+      "accents": []
+    },
+    {
+      "id": "S02",
+      "start": 8,
+      "end": 15,
+      "focus_object": "数字阈值触发节点点亮与重音",
+      "text_beats": [
+        {
+          "id": "threshold",
+          "text": "读数越过阈值，",
+          "x": 105,
+          "y": 150,
+          "start": 0.2,
+          "end": 6.95,
+          "font_px": 80,
+          "color": "#f1e9d3",
+          "role": "narration",
+          "critical": true,
+          "entry": {
+            "type": "assemble",
+            "duration": 0.5,
+            "stagger": 0.028,
+            "blur": 7
+          },
+          "hold": {
+            "profile": "v02",
+            "time_origin": 0,
+            "phase": 0.4
+          },
+          "exit": {
+            "duration": 0.35,
+            "stagger": 0.015,
+            "blur": 9
+          },
+          "highlights": []
+        },
+        {
+          "id": "hit",
+          "text": "新节点亮起，画面轻震。",
+          "x": 105,
+          "y": 269,
+          "start": 1,
+          "end": 6.95,
+          "font_px": 80,
+          "color": "#f1e9d3",
+          "role": "narration",
+          "critical": true,
+          "entry": {
+            "type": "assemble",
+            "duration": 0.5,
+            "stagger": 0.028,
+            "blur": 7
+          },
+          "hold": {
+            "profile": "v02",
+            "time_origin": 0,
+            "phase": 0.4
+          },
+          "exit": {
+            "duration": 0.35,
+            "stagger": 0.015,
+            "blur": 9
+          },
+          "highlights": [
+            {
+              "text": "轻震",
+              "color": "#d9ad58",
+              "font_px": 98,
+              "weight": 700,
+              "entry": {
+                "scale_from": 1.45,
+                "blur": 12,
+                "duration": 0.65
+              },
+              "underline": {
+                "delay": 1.5,
+                "duration": 0.55,
+                "width": 2,
+                "offset": 14
+              }
+            }
+          ]
+        }
+      ],
+      "counter": {
+        "at": 8.5,
+        "duration": 4.4,
+        "from": 0,
+        "to": 440,
+        "thresholds": [
+          100,
+          200,
+          300,
+          400
+        ]
+      },
+      "accents": [
+        {
+          "at": 9.5,
+          "duration": 0.45,
+          "x": 16,
+          "y": 14,
+          "zoom": 0.022,
+          "hz": 9
+        },
+        {
+          "at": 10.5,
+          "duration": 0.45,
+          "x": 16,
+          "y": 14,
+          "zoom": 0.022,
+          "hz": 9
+        },
+        {
+          "at": 11.5,
+          "duration": 0.45,
+          "x": 16,
+          "y": 14,
+          "zoom": 0.022,
+          "hz": 9
+        },
+        {
+          "at": 12.5,
+          "duration": 0.45,
+          "x": 16,
+          "y": 14,
+          "zoom": 0.022,
+          "hz": 9
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "start": 15,
+      "end": 24,
+      "focus_object": "沿路径推进的亮头与到站扩散",
+      "text_beats": [
+        {
+          "id": "signal",
+          "text": "亮头沿路线向前，",
+          "x": 105,
+          "y": 150,
+          "start": 0.3,
+          "end": 8.95,
+          "font_px": 80,
+          "color": "#f1e9d3",
+          "role": "narration",
+          "critical": true,
+          "entry": {
+            "type": "assemble",
+            "duration": 0.5,
+            "stagger": 0.028,
+            "blur": 7
+          },
+          "hold": {
+            "profile": "v02",
+            "time_origin": 0,
+            "phase": 0.4
+          },
+          "exit": {
+            "duration": 0.35,
+            "stagger": 0.015,
+            "blur": 9
+          },
+          "highlights": []
+        },
+        {
+          "id": "arrival",
+          "text": "到站后，扩散一圈光。",
+          "x": 105,
+          "y": 269,
+          "start": 1,
+          "end": 8.95,
+          "font_px": 80,
+          "color": "#f1e9d3",
+          "role": "narration",
+          "critical": true,
+          "entry": {
+            "type": "assemble",
+            "duration": 0.5,
+            "stagger": 0.028,
+            "blur": 7
+          },
+          "hold": {
+            "profile": "v02",
+            "time_origin": 0,
+            "phase": 0.4
+          },
+          "exit": {
+            "duration": 0.35,
+            "stagger": 0.015,
+            "blur": 9
+          },
+          "highlights": [
+            {
+              "text": "到站",
+              "color": "#d9ad58",
+              "font_px": 98,
+              "weight": 700,
+              "entry": {
+                "scale_from": 1.45,
+                "blur": 12,
+                "duration": 0.65
+              },
+              "underline": {
+                "delay": 1.5,
+                "duration": 0.55,
+                "width": 2,
+                "offset": 14
+              }
+            }
+          ]
+        }
+      ],
+      "signal": {
+        "at": 15.8,
+        "duration": 5.3,
+        "linger": 0.7
+      },
+      "accents": [
+        {
+          "at": 21.1,
+          "duration": 0.45,
+          "x": 12,
+          "y": 10,
+          "zoom": 0.014,
+          "hz": 8
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>History Video Preview</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #f2f0eb;
+        color: #1f2933;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+      }
+
+      main {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 24px 0 40px;
+      }
+
+      h1 {
+        margin: 0 0 16px;
+        font-size: clamp(20px, 3vw, 30px);
+        letter-spacing: 0.02em;
+      }
+
+      .stage {
+        display: grid;
+        place-items: center;
+        min-height: 240px;
+        overflow: hidden;
+        border: 1px solid #d8d2c8;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0 10px 30px rgb(49 42 32 / 8%);
+      }
+
+      canvas {
+        display: block;
+        width: min(100%, 1120px);
+        height: auto;
+        background: #fff;
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        gap: 12px;
+        align-items: center;
+        margin-top: 14px;
+      }
+
+      button {
+        border: 0;
+        border-radius: 7px;
+        padding: 8px 14px;
+        background: #1f2933;
+        color: #fff;
+        cursor: pointer;
+        font: inherit;
+      }
+
+      button:disabled,
+      input:disabled {
+        cursor: not-allowed;
+        opacity: 0.45;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        accent-color: #a44a31;
+      }
+
+      output {
+        min-width: 110px;
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        color: #5d6770;
+      }
+
+      .status,
+      .metadata {
+        margin-top: 14px;
+        border: 1px solid #d8d2c8;
+        border-radius: 10px;
+        background: rgb(255 255 255 / 70%);
+      }
+
+      .status {
+        padding: 10px 12px;
+        color: #5d6770;
+        white-space: pre-wrap;
+      }
+
+      .metadata {
+        display: grid;
+        grid-template-columns: minmax(120px, 0.35fr) 1fr;
+        margin-bottom: 0;
+        overflow: hidden;
+      }
+
+      .metadata dt,
+      .metadata dd {
+        margin: 0;
+        padding: 9px 12px;
+        border-bottom: 1px solid #e9e4db;
+      }
+
+      .metadata dt {
+        background: rgb(240 236 229 / 65%);
+        color: #5d6770;
+        font-size: 0.92em;
+      }
+
+      .metadata dd {
+        overflow-wrap: anywhere;
+        white-space: pre-wrap;
+      }
+
+      .metadata dt:last-of-type,
+      .metadata dd:last-of-type {
+        border-bottom: 0;
+      }
+
+      @media (max-width: 620px) {
+        main {
+          width: min(100% - 20px, 1120px);
+          padding-top: 14px;
+        }
+
+        .controls {
+          grid-template-columns: auto 1fr;
+        }
+
+        output {
+          grid-column: 1 / -1;
+          text-align: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1 id="title">History Video Preview</h1>
+      <div class="stage">
+        <canvas id="preview" aria-label="动画预览"></canvas>
+      </div>
+      <div class="controls" aria-label="播放控制">
+        <button id="play" type="button" disabled>播放</button>
+        <input id="seek" type="range" min="0" max="1" step="0.001" value="0" disabled />
+        <output id="time" for="seek">0.000 / 0.000 s</output>
+      </div>
+      <p><label><input id="motion-switch" type="checkbox" checked> 启用行内动效（取消可对照基础文字与主体）</label></p>
+      <div id="status" class="status" role="status">正在加载 scene.js…</div>
+      <dl id="metadata" class="metadata" hidden></dl>
+    </main>
+
+    <script type="module">
+      const canvas = document.querySelector('#preview');
+      const context = canvas.getContext('2d');
+      const title = document.querySelector('#title');
+      const play = document.querySelector('#play');
+      const seek = document.querySelector('#seek');
+      const timeOutput = document.querySelector('#time');
+      const status = document.querySelector('#status');
+      const metadataPanel = document.querySelector('#metadata');
+
+      const formatTime = (seconds) => `${Number(seconds).toFixed(3)} s`;
+      const prettyKey = (key) =>
+        String(key)
+          .replace(/([a-z])([A-Z])/g, '$1 $2')
+          .replace(/[_-]+/g, ' ');
+      const displayValue = (value) => {
+        if (typeof value === 'string') return value;
+        if (value === undefined) return '';
+        try {
+          return JSON.stringify(value, null, 2);
+        } catch {
+          return String(value);
+        }
+      };
+
+      const setStatus = (message, isError = false) => {
+        status.textContent = message;
+        status.style.color = isError ? '#9f2d20' : '';
+      };
+
+      const showMetadata = (scene) => {
+        const declared =
+          scene.metadata && typeof scene.metadata === 'object' ? scene.metadata : {};
+        const fallback =
+          scene.meta && typeof scene.meta === 'object' ? scene.meta : {};
+        const metadata = { ...fallback, ...declared };
+        for (const key of [
+          'title',
+          'description',
+          'fps',
+          'width',
+          'height',
+          'duration',
+          'silent',
+          'technical',
+          'technicalSample',
+          'technical_sample',
+          'sample',
+          'audio',
+          'notes',
+        ]) {
+          if (key in scene && !(key in metadata)) metadata[key] = scene[key];
+        }
+
+        if (metadata.title) title.textContent = String(metadata.title);
+        const entries = Object.entries(metadata).filter(([, value]) => value !== undefined);
+        if (!entries.length) return;
+        for (const [key, value] of entries) {
+          const label = document.createElement('dt');
+          const content = document.createElement('dd');
+          label.textContent = prettyKey(key);
+          content.textContent = displayValue(value);
+          metadataPanel.append(label, content);
+        }
+        metadataPanel.hidden = false;
+      };
+
+      let scene;
+      let duration = 0;
+      let currentTime = 0;
+      let playing = false;
+      let playbackStart = 0;
+      let playbackOffset = 0;
+      let animationFrame = 0;
+      let drawSerial = 0;
+
+      const draw = async (at) => {
+        const serial = ++drawSerial;
+        const time = Math.max(0, Math.min(duration, Number(at) || 0));
+        if (typeof context.reset === 'function') context.reset();
+        else {
+          context.setTransform(1, 0, 0, 1, 0, 0);
+          context.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        await scene.render(context, time);
+        if (serial !== drawSerial) return;
+        currentTime = time;
+        seek.value = String(time);
+        timeOutput.value = `${formatTime(time)} / ${formatTime(duration)}`;
+        timeOutput.textContent = timeOutput.value;
+      };
+
+      const tick = (now) => {
+        if (!playing) return;
+        const next = playbackOffset + (now - playbackStart) / 1000;
+        if (next >= duration) {
+          playing = false;
+          playbackOffset = duration;
+          play.textContent = '播放';
+          draw(duration);
+          return;
+        }
+        draw(next);
+        animationFrame = requestAnimationFrame(tick);
+      };
+
+      const stop = () => {
+        playing = false;
+        cancelAnimationFrame(animationFrame);
+        playbackOffset = currentTime;
+        play.textContent = '播放';
+      };
+
+      try {
+        scene = await import('./scene.js');
+        await scene.ready;
+        await document.fonts?.ready;
+        const width = Number(scene.width);
+        const height = Number(scene.height);
+        duration = Number(scene.duration);
+        if (![width, height].every((value) => Number.isInteger(value) && value > 0)) {
+          throw Error('scene.js must export positive integer width and height');
+        }
+        if (!Number.isFinite(duration) || duration <= 0) {
+          throw Error('scene.js must export a positive duration');
+        }
+        if (typeof scene.render !== 'function') throw Error('scene.js must export render(ctx, t)');
+
+        canvas.width = width;
+        canvas.height = height;
+        seek.max = String(duration);
+        seek.value = '0';
+        play.disabled = false;
+        seek.disabled = false;
+        showMetadata(scene);
+        document.querySelector("#motion-switch").addEventListener("change", async e => { scene.setMotion(e.target.checked); await draw(currentTime); });
+        await draw(0);
+        setStatus('就绪。预览不生成音频；silent、technical sample 等状态来自 scene.js 元数据。');
+      } catch (error) {
+        setStatus(`加载预览失败：${error?.message || error}`, true);
+      }
+
+      play.addEventListener('click', () => {
+        if (!scene || !duration) return;
+        if (playing) {
+          stop();
+          return;
+        }
+        if (currentTime >= duration) playbackOffset = 0;
+        else playbackOffset = currentTime;
+        playbackStart = performance.now();
+        playing = true;
+        play.textContent = '暂停';
+        animationFrame = requestAnimationFrame(tick);
+      });
+
+      seek.addEventListener('input', () => {
+        if (!scene) return;
+        stop();
+        playbackOffset = Number(seek.value);
+        draw(playbackOffset);
+      });
+    </script>
+  </body>
+</html>

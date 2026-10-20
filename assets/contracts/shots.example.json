@@ -1,0 +1,337 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "visual_family": "dark-explainer",
+  "audio_status": "not-requested",
+  "hook_contract": {
+    "text": "人马要休息，急信怎么不停？",
+    "deadline_seconds": 3,
+    "planned_complete_by": 1.1,
+    "reason": "短片先给出要解释的问题",
+    "beats": [
+      {
+        "text": "人马要休息，",
+        "start": 0.2,
+        "complete_by": 0.7,
+        "font_px": 84
+      },
+      {
+        "text": "急信怎么不停？",
+        "start": 0.6,
+        "complete_by": 1.1,
+        "font_px": 84
+      }
+    ],
+    "measurement": null
+  },
+  "readability_contract": {
+    "display_width": 390,
+    "critical_min_display_px": 14,
+    "hook_min_display_px": 16,
+    "measurement": null
+  },
+  "shots": [
+    {
+      "id": "S01",
+      "start": 0,
+      "end": 8,
+      "question": "急信如何不停",
+      "spatial_basis": "驿递机制示意，不对应具体朝代",
+      "focus_object": "接力路线与四个站点",
+      "text_beats": [
+        {
+          "id": "intro-a",
+          "text": "人马要休息，",
+          "role": "narration",
+          "critical": true,
+          "font_px": 84,
+          "x": 105,
+          "y": 142,
+          "start": 0.2,
+          "end": 4.7,
+          "color": "#f1e9d3",
+          "align": "left",
+          "entry": {
+            "type": "assemble",
+            "duration": 0.4,
+            "stagger": 0.01,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.3,
+            "stagger": 0.01,
+            "blur": 8
+          }
+        },
+        {
+          "id": "intro-b",
+          "text": "急信怎么不停？",
+          "role": "narration",
+          "critical": true,
+          "font_px": 84,
+          "x": 105,
+          "y": 248,
+          "start": 0.6,
+          "end": 5.0,
+          "color": "#d9ad58",
+          "align": "left",
+          "entry": {
+            "type": "assemble",
+            "duration": 0.4,
+            "stagger": 0.01,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.3,
+            "stagger": 0.01,
+            "blur": 8
+          }
+        },
+        {
+          "id": "intro-answer",
+          "text": "办法，是沿途接力。",
+          "role": "narration",
+          "critical": true,
+          "font_px": 80,
+          "x": 105,
+          "y": 142,
+          "start": 5.25,
+          "end": 7.95,
+          "color": "#d9ad58",
+          "align": "left",
+          "entry": {
+            "type": "assemble",
+            "duration": 0.4,
+            "stagger": 0.01,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.3,
+            "stagger": 0.01,
+            "blur": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "start": 8,
+      "end": 16,
+      "question": "如何交接",
+      "spatial_basis": "驿递机制示意，不对应具体朝代",
+      "focus_object": "甲到站、信交出、乙接信离开",
+      "text_beats": [
+        {
+          "id": "arrive",
+          "text": "到站，交出信件。",
+          "role": "narration",
+          "critical": true,
+          "font_px": 80,
+          "x": 105,
+          "y": 142,
+          "start": 0.1,
+          "end": 3.7,
+          "color": "#f1e9d3",
+          "align": "left",
+          "entry": {
+            "type": "assemble",
+            "duration": 0.4,
+            "stagger": 0.01,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.3,
+            "stagger": 0.01,
+            "blur": 8
+          }
+        },
+        {
+          "id": "change",
+          "text": "下一程，换人换马。",
+          "role": "narration",
+          "critical": true,
+          "font_px": 80,
+          "x": 105,
+          "y": 142,
+          "start": 3.45,
+          "end": 7.95,
+          "color": "#d9ad58",
+          "align": "left",
+          "entry": {
+            "type": "assemble",
+            "duration": 0.4,
+            "stagger": 0.01,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.3,
+            "stagger": 0.01,
+            "blur": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "start": 16,
+      "end": 24,
+      "question": "留下什么",
+      "spatial_basis": "驿递机制示意，不对应具体朝代",
+      "focus_object": "交接记录与同一封信",
+      "text_beats": [
+        {
+          "id": "record-a",
+          "text": "信往前走，",
+          "role": "narration",
+          "critical": true,
+          "font_px": 72,
+          "x": 105,
+          "y": 142,
+          "start": 0.1,
+          "end": 7.9,
+          "color": "#f1e9d3",
+          "align": "left",
+          "entry": {
+            "type": "assemble",
+            "duration": 0.4,
+            "stagger": 0.01,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.3,
+            "stagger": 0.01,
+            "blur": 8
+          }
+        },
+        {
+          "id": "record-b",
+          "text": "交接也留下记录。",
+          "role": "narration",
+          "critical": true,
+          "font_px": 72,
+          "x": 105,
+          "y": 238,
+          "start": 0.65,
+          "end": 7.9,
+          "color": "#d9ad58",
+          "align": "left",
+          "entry": {
+            "type": "assemble",
+            "duration": 0.4,
+            "stagger": 0.01,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.3,
+            "stagger": 0.01,
+            "blur": 8
+          }
+        },
+        {
+          "id": "record-card",
+          "text": "第一站 · 交接记录",
+          "role": "narration",
+          "critical": true,
+          "font_px": 72,
+          "x": 1262,
+          "y": 425,
+          "start": 1.6,
+          "end": 7.9,
+          "color": "#473620",
+          "align": "center",
+          "entry": {
+            "type": "assemble",
+            "duration": 0.4,
+            "stagger": 0.01,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.3,
+            "stagger": 0.01,
+            "blur": 8
+          }
+        },
+        {
+          "id": "record-owner",
+          "text": "甲 → 乙",
+          "role": "narration",
+          "critical": true,
+          "font_px": 84,
+          "x": 1262,
+          "y": 574,
+          "start": 2.1,
+          "end": 7.9,
+          "color": "#463720",
+          "align": "center",
+          "entry": {
+            "type": "assemble",
+            "duration": 0.4,
+            "stagger": 0.01,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.3,
+            "stagger": 0.01,
+            "blur": 8
+          }
+        },
+        {
+          "id": "record-status",
+          "text": "同一封信 · 交讫",
+          "role": "narration",
+          "critical": true,
+          "font_px": 72,
+          "x": 1262,
+          "y": 696,
+          "start": 2.6,
+          "end": 7.9,
+          "color": "#463720",
+          "align": "center",
+          "entry": {
+            "type": "assemble",
+            "duration": 0.4,
+            "stagger": 0.01,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.3,
+            "stagger": 0.01,
+            "blur": 8
+          }
+        }
+      ]
+    }
+  ],
+  "duration": 24
+}

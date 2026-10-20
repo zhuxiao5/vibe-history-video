@@ -1,0 +1,304 @@
+{
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "duration": 24,
+  "visual_family": "dark-explainer",
+  "audio_status": "not-requested",
+  "timing_source": "cues.json",
+  "hook_contract": null,
+  "readability_contract": {
+    "display_width": 390,
+    "critical_min_display_px": 14,
+    "hook_min_display_px": 16,
+    "measurement": null
+  },
+  "shots": [
+    {
+      "id": "S03",
+      "scene": "S03",
+      "focus_object": "受箭舷侧与船体偏重",
+      "before": "正浮，尚未落箭",
+      "action": "单面受箭，接触处局部光圈，镜头推近观察偏重",
+      "after": "受力不均，船倾斜",
+      "camera_keyframes": [
+        {
+          "at": 0,
+          "x": 930,
+          "y": 540,
+          "zoom": 1.0
+        },
+        {
+          "at": 1.8,
+          "x": 930,
+          "y": 540,
+          "zoom": 1.0
+        },
+        {
+          "at": 3.1,
+          "x": 940,
+          "y": 595,
+          "zoom": 1.4
+        },
+        {
+          "ref": {
+            "event": "ARROW1",
+            "index": 0,
+            "offset": 0.8
+          },
+          "x": 960,
+          "y": 610,
+          "zoom": 1.9
+        },
+        {
+          "at": 9,
+          "x": 920,
+          "y": 580,
+          "zoom": 1.55
+        },
+        {
+          "at": 11.9,
+          "x": 920,
+          "y": 580,
+          "zoom": 1.55
+        }
+      ],
+      "text_beats": [
+        {
+          "id": "same-flank",
+          "text": "箭先落在同一舷。",
+          "start": 0.25,
+          "end": 5.65,
+          "font_px": 84,
+          "x": 110,
+          "y": 155,
+          "color": "#f1e9d3",
+          "role": "narration",
+          "critical": true,
+          "entry": {
+            "type": "assemble",
+            "duration": 0.5,
+            "stagger": 0.025,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.38,
+            "stagger": 0.012,
+            "blur": 9
+          },
+          "highlights": [
+            {
+              "text": "同一舷",
+              "color": "#d9ad58"
+            }
+          ]
+        },
+        {
+          "id": "weight",
+          "text": "一侧越来越重。",
+          "start": 5.4,
+          "end": 9.35,
+          "font_px": 84,
+          "x": 110,
+          "y": 155,
+          "color": "#f1e9d3",
+          "role": "narration",
+          "critical": true,
+          "entry": {
+            "type": "assemble",
+            "duration": 0.5,
+            "stagger": 0.025,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.38,
+            "stagger": 0.012,
+            "blur": 9
+          },
+          "highlights": [
+            {
+              "text": "越来越重",
+              "color": "#d9ad58"
+            }
+          ]
+        },
+        {
+          "id": "risk",
+          "text": "船偏重，将覆。",
+          "start": 9.05,
+          "end": 11.95,
+          "font_px": 88,
+          "x": 110,
+          "y": 155,
+          "color": "#c76550",
+          "role": "emphasis",
+          "critical": true,
+          "entry": {
+            "type": "resolve",
+            "duration": 0.36,
+            "stagger": 0.018,
+            "blur": 5,
+            "scale_from": 1.08,
+            "tracking_from": 3
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.38,
+            "stagger": 0.012,
+            "blur": 9
+          },
+          "weight": 700
+        }
+      ],
+      "claim_ids": [
+        "C01"
+      ],
+      "spatial_basis": "沿用用户原工程的机制示意，不作船型/方位还原"
+    },
+    {
+      "id": "S04",
+      "scene": "S04",
+      "focus_object": "掉头后另一舷受箭，船体回正",
+      "before": "单面受箭偏重",
+      "action": "俯视成为主景说明180度回船；回到剖面看双面受箭",
+      "after": "两侧重量接近平衡",
+      "camera_keyframes": [
+        {
+          "at": 0,
+          "x": 920,
+          "y": 580,
+          "zoom": 1.55
+        },
+        {
+          "at": 3.0,
+          "x": 920,
+          "y": 590,
+          "zoom": 1.75
+        },
+        {
+          "ref": {
+            "event": "ARROW2",
+            "index": 4,
+            "offset": 0
+          },
+          "x": 970,
+          "y": 610,
+          "zoom": 1.95
+        },
+        {
+          "at": 9,
+          "x": 910,
+          "y": 565,
+          "zoom": 1.35
+        },
+        {
+          "at": 11.9,
+          "x": 910,
+          "y": 555,
+          "zoom": 1.15
+        }
+      ],
+      "text_beats": [
+        {
+          "id": "turn",
+          "text": "回船，让另一面受箭。",
+          "start": 0.25,
+          "end": 5.75,
+          "font_px": 80,
+          "x": 110,
+          "y": 155,
+          "color": "#f1e9d3",
+          "role": "narration",
+          "critical": true,
+          "entry": {
+            "type": "assemble",
+            "duration": 0.5,
+            "stagger": 0.025,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.38,
+            "stagger": 0.012,
+            "blur": 9
+          },
+          "highlights": [
+            {
+              "text": "另一面",
+              "color": "#d9ad58"
+            }
+          ]
+        },
+        {
+          "id": "return",
+          "text": "两侧的重量接近平衡。",
+          "start": 5.5,
+          "end": 9.9,
+          "font_px": 80,
+          "x": 110,
+          "y": 155,
+          "color": "#f1e9d3",
+          "role": "narration",
+          "critical": true,
+          "entry": {
+            "type": "assemble",
+            "duration": 0.5,
+            "stagger": 0.025,
+            "blur": 7
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.38,
+            "stagger": 0.012,
+            "blur": 9
+          }
+        },
+        {
+          "id": "level",
+          "text": "箭均船平，乃还。",
+          "start": 9.55,
+          "end": 11.95,
+          "font_px": 88,
+          "x": 110,
+          "y": 155,
+          "color": "#d9ad58",
+          "role": "emphasis",
+          "critical": true,
+          "entry": {
+            "type": "resolve",
+            "duration": 0.36,
+            "stagger": 0.018,
+            "blur": 5,
+            "scale_from": 1.08,
+            "tracking_from": 3
+          },
+          "hold": {
+            "mode": "static"
+          },
+          "exit": {
+            "duration": 0.38,
+            "stagger": 0.012,
+            "blur": 9
+          },
+          "weight": 700
+        }
+      ],
+      "claim_ids": [
+        "C01"
+      ],
+      "spatial_basis": "解释性俯视与剖面切换，非连续摄影机三维复原"
+    }
+  ]
+}
