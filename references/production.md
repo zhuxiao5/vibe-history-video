@@ -172,7 +172,7 @@ python <skill>/scripts/check-timing.py --root <工程目录>
 
 ## 跨 Agent 使用
 
-本目录就是可复制的技能包。Codex 放到 `~/.codex/skills/history-video/`；支持通用 Agent skills 的宿主放到其 skills 发现目录（常见为 `~/.agents/skills/`，具体以宿主为准）；不支持自动发现时直接要求读取本目录 `SKILL.md`。已有同名技能先检查，未经授权不覆盖。安装不需要复制任何参考原片；需要精细对标时再提供本地参考目录。
+本目录就是可复制的技能包。Codex 放到 `~/.codex/skills/vibe-history-video/`；支持通用 Agent skills 的宿主放到其 skills 发现目录（常见为 `~/.agents/skills/`，具体以宿主为准）；不支持自动发现时直接要求读取本目录 `SKILL.md`。已有同名技能先检查，未经授权不覆盖。安装不需要复制任何参考原片；需要精细对标时再提供本地参考目录。
 
 ## 共享时间与有声工程
 

@@ -1,4 +1,4 @@
 interface:
   display_name: "中国历史科普视频"
   short_description: "将历史问题制作成暗色图解风格的地图、器物与制度动画，交付可编辑源码和视频"
-  default_prompt: "使用 $history-video，按暗色图解风格把我给的历史题目制作成科普视频，先核对史料和关键机制，再制作并验证画面。"
+  default_prompt: "使用 $vibe-history-video，按暗色图解风格把我给的历史题目制作成科普视频，先核对史料和关键机制，再制作并验证画面。"

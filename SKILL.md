@@ -1,5 +1,5 @@
 ---
-name: history-video
+name: vibe-history-video
 description: 制作暗色图解风格的中国历史与历史地理科普视频：暗色地形、宋体叙事、语义高亮、路线演进、器物与剖面动画。支持选题史料、分镜、可编辑代码与 MP4；用于指定该风格的创作或改稿。
 ---
 
